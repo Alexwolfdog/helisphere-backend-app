@@ -20,7 +20,7 @@ const teamRoutes = require('./routes/team');
 app.use('/users', userRoutes);
 app.use('/teams', teamRoutes);
 
-monoose.connect(config.db.url)
+monoose.connect(process.env.db_url)
 .then(result => {
     console.log('Connected to database');
     app.listen(port, () => {
