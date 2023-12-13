@@ -19,6 +19,9 @@ const teamRoutes = require('./routes/team');
 
 app.use('/users', userRoutes);
 app.use('/teams', teamRoutes);
+app.use((req, res) => {
+    res.status(404).send('Not Found');
+});
 
 monoose.connect(process.env.db_url)
 .then(result => {
