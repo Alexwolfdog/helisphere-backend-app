@@ -17,15 +17,17 @@ app.use(cors({
 const userRoutes = require('./routes/user');
 const teamRoutes = require('./routes/team');
 
+
+app.use((req,res,next)=>{
+    return process.env.db_url;
+});
+
 app.use('/users', userRoutes);
 app.use('/teams', teamRoutes);
 app.use((req, res) => {
     res.status(404).send('Not Found');
 });
 
-app.use((req,res,next)=>{
-    return "working";
-});
 
 monoose.connect(process.env.db_url)
 .then(result => {
