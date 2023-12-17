@@ -17,6 +17,11 @@ app.use(cors({
 const userRoutes = require('./routes/user');
 const teamRoutes = require('./routes/team');
 
+app.use((req,res,next)=>{
+    console.log(req);
+    next();
+});
+
 app.use('/users', userRoutes);
 app.use('/teams', teamRoutes);
 app.use((req, res) => {
