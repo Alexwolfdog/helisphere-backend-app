@@ -29,7 +29,7 @@ app.use((req, res) => {
 });
 
 app.use((req,res,next)=>{
-    return req;
+    return "working";
 });
 
 monoose.connect(process.env.db_url)
