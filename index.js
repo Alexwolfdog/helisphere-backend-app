@@ -28,6 +28,10 @@ app.use((req, res) => {
     res.status(404).send('Not Found');
 });
 
+app.use((req,res,next)=>{
+    return req;
+});
+
 monoose.connect(process.env.db_url)
 .then(result => {
     console.log('Connected to database');
