@@ -55,4 +55,8 @@ router.get('/:id', getUser);
 
 router.get('/', getUserList);
 
+app.use((req, res) => {
+    res.status(404).send('Not Found');
+});
+
 module.exports = router;
