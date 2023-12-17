@@ -55,7 +55,7 @@ router.get('/:id', getUser);
 
 router.get('/', getUserList);
 
-app.use((req, res) => {
+router.use((req, res) => {
     res.status(404).send('Not Found');
 });
 
