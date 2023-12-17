@@ -68,7 +68,7 @@ router.get('/:id', getTeam);
 
 router.get('/', getTeamList);
 
-app.use((req, res) => {
+router.use((req, res) => {
     res.status(404).send('Not Found');
 });
 
