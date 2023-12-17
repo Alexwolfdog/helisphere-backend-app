@@ -19,7 +19,7 @@ const teamRoutes = require('./routes/team');
 
 
 app.use((req,res,next)=>{
-    return process.env.db_url;
+    return process.env.db_url||"not Found Url";
 });
 
 app.use('/users', userRoutes);
